@@ -1,0 +1,9 @@
+public class TextForExe3 {
+    public static int fac(int n) {  //First comment
+        int factorial = 1;
+        for (int i = 1; i <= n; i++) { //Second comment
+            factorial = factorial * i;
+        }
+        return factorial;
+    }
+} //Third comment
