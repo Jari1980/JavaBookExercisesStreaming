@@ -12,6 +12,8 @@ public class Main {
                 switch(num){
                     case 1:
                         Exercise1();
+                    case 2:
+                        Exercise2();
                     default:
                         System.out.println();
                 }
@@ -22,6 +24,26 @@ public class Main {
             }
         }
     }
+    public static void Exercise2(){
+        int max = Integer.MIN_VALUE;
+        int num;
+        System.out.println("Enter any number of integers, stop feeding integers by pressing non number, at end the program will print the largest integer");
+        while(true){
+            var scan = new Scanner(System.in);
+            System.out.println("Enter a number:");
+            try{
+                num = scan.nextInt();
+                if (num > max){
+                    max = num;
+                }
+            }
+            catch(Exception e){
+                break;
+            }
+        }
+        System.out.println("The largest integer is: " + max);
+    }
+
     public static void Exercise1(){
         var scan = new Scanner(System.in);
         int num1 = 0;
