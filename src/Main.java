@@ -23,6 +23,29 @@ public class Main {
         }
     }
     public static void Exercise1(){
-        System.out.println("Heluuu");
+        var scan = new Scanner(System.in);
+        int num1 = 0;
+        int num2 = 0;
+        System.out.println("Enter a integer for num1:");
+        try{
+            num1 = scan.nextInt();
+        }
+        catch (Exception e){
+            System.out.println("Non valid integer, exiting program");
+            System.exit(0);
+        }
+        System.out.println("Enter a integer for num2:");
+        try{
+            num2 = scan.nextInt();
+        }
+        catch (Exception e){
+            System.out.println("Non valid integer, exiting program");
+            System.exit(0);
+        }
+        System.out.println(num1 + "!.. .." + num2 + "!:");
+        for (int i = num1; i <= num2; i++){
+            System.out.println(i + "! = " + Factorial.fac(i));
+        }
+
     }
 }
