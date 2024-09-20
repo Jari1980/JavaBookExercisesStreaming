@@ -19,6 +19,8 @@ public class Main {
                         Exercise3();
                     case 4:
                         Exercise4();
+                    case 5:
+                        Exercise5();
                     default:
                         System.out.println();
                 }
@@ -29,6 +31,29 @@ public class Main {
             }
         }
     }
+    public static void Exercise5() throws IOException{
+        System.out.println("In this exercise Im reading the file \"Exercise5InData.txt\" and creating a new" +
+                " document, \"Exercise5OutData.txt\" with the students passing 50 points.");
+        var instream = new Scanner(new File("src/Exercise5InData.txt"));
+        var outStream = new PrintWriter (new BufferedWriter (new FileWriter("Exercise5OutData.txt")));
+        String nameTemp ="";
+        int pointTemp = 0;
+        while(true){
+            nameTemp = instream.nextLine();
+            pointTemp = instream.nextInt();
+            if(pointTemp >= 50){
+                System.out.println("Added to Exercise5OutData.txt");
+                System.out.println(nameTemp + " points: " + pointTemp);
+                outStream.println(nameTemp + " points: " + pointTemp);
+            }
+            if (!instream.hasNextLine()){
+                break;
+            }
+            instream.nextLine(); // Needs to be added in order to jump next line from nextInt()
+        }
+        outStream.close();
+    }
+
     public static void Exercise4() throws IOException{
         System.out.println("In this exercise Im reading the file \"Exercise4.txt\" where" +
                 "names followed by different amount of timestamps are written. This program will " +
