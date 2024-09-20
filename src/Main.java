@@ -17,6 +17,8 @@ public class Main {
                         Exercise2();
                     case 3:
                         Exercise3();
+                    case 4:
+                        Exercise4();
                     default:
                         System.out.println();
                 }
@@ -27,8 +29,29 @@ public class Main {
             }
         }
     }
+    public static void Exercise4() throws IOException{
+        System.out.println("In this exercise Im reading the file \"Exercise4.txt\" where" +
+                "names followed by different amount of timestamps are written. This program will " +
+                "sum the time for the timestamps for all users and state the user with most time.");
+        var instream = new Scanner(new File("src/Exercise4.txt"));
+        String nameMostTime = "";
+        int mostTime = 0;
+        while(instream.hasNext()){
+            String tempName = instream.next();
+            int tempTime = 0;
+            while (instream.hasNextInt()){
+                tempTime = tempTime + instream.nextInt();
+            }
+            if (tempTime > mostTime){
+                nameMostTime = tempName;
+                mostTime = tempTime;
+            }
+        }
+        System.out.println("User with most time: " + nameMostTime + ", total time: " + mostTime);
+    }
+
     public static void Exercise3() throws IOException {
-        System.out.println("In this program Im reading the file Exercise3.txt and finding out the percentage of commented lines.");
+        System.out.println("In this program Im reading the file Exercise3.txt and finding out the percentage of lines with comment.");
         var instream = new BufferedReader(new FileReader("src/Exercise3.txt"));
         //C:\Users\jarit\Lexicon Växjö\JavaStreaming\StreamingJavaBookExercises\src\TextForExe3.java
         //File file = new File("findingFilePathForExercise3.txt");

@@ -1,0 +1,4 @@
+Jari 20 12 50 70
+Kalle 30 50
+Sylvia 6 60 20
+Monika
