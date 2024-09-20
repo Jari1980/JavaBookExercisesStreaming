@@ -21,6 +21,8 @@ public class Main {
                         Exercise4();
                     case 5:
                         Exercise5();
+                    case 6:
+                        Exercise6();
                     default:
                         System.out.println();
                 }
@@ -31,6 +33,23 @@ public class Main {
             }
         }
     }
+    public static void Exercise6() throws IOException{
+        System.out.println("In this exercise user can add names, these names will be added in separate rows in a file, " +
+                "running this program again will add new names to the existing file.");
+        var outstream = new PrintWriter(new BufferedWriter(new FileWriter("Exercise6.txt", true)));
+        var scan = new Scanner(System.in);
+        while(true){
+            System.out.println("Enter a name, stop with \";\" :");
+            String name = scan.nextLine();
+            if (name.contains(";")){
+                break;
+            }
+            outstream.println(name);
+        }
+
+        outstream.close();
+    }
+
     public static void Exercise5() throws IOException{
         System.out.println("In this exercise Im reading the file \"Exercise5InData.txt\" and creating a new" +
                 " document, \"Exercise5OutData.txt\" with the students passing 50 points.");
